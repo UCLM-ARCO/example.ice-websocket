@@ -6,7 +6,7 @@ This is a minimal working example to demostrate Ice-websocket integration:
 
   - A new Ice object is created and its proxy is printed at terminal
 
-- Run 'python ./ice-client.py "<printed proxy"' in other terminal
+- Run 'python ./ice-client.py "<printed proxy>"' in other terminal
 
   - Invocation is sent to browser through the websocket
   - Run it again...
