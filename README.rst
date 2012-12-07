@@ -1,7 +1,8 @@
 This is a minimal working example to demostrate Ice-websocket integration:
 
-- Run::
+- Run
 
+::
   python ice-tornado-server.py
 
 - Open "client.html" in a websocket compliant web browser (ie. chrome)
