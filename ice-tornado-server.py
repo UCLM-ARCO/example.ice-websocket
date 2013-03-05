@@ -17,7 +17,7 @@ class HelloWebSocketFactory:
     def __call__(self, *args):
         servant = HelloWebSocket(*args)
         proxy = self.adapter.add(servant, self.identity)
-        print proxy
+        print "'{}'".format(proxy)
         return servant
 
 
@@ -39,6 +39,7 @@ class Server(Ice.Application):
         webapp.listen(9999)
 
         self.shutdownOnInterrupt()
+        print "Now open navigator: 'xdg-open client.html'"
         ioloop.IOLoop.instance().start()
 
 

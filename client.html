@@ -6,32 +6,31 @@
       src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 
     <script type="text/javascript">
-      function WebSocketTest() {
-	  if ("WebSocket" in window) {
-	      var ws = new WebSocket("ws://localhost:9999/hello");
-
-	      ws.onopen = function() {
-		  $("#log").html("Connection open<br>");
-	      };
-
-	      ws.onmessage = function (message) {
-		  var data = message.data;
-		  $("#log").append("Message is received: " + data + "<br>");
-	      };
-
-	      ws.onclose = function () {
-		  $("#log").append("Connection closed<br>");
-	      };
-	  }
-	  else {
+      $(window).load(function() {
+	  if (!"WebSocket" in window) {
 	      alert("WebSocket NOT supported by your Browser!");
+	      return;
 	  }
-      }
+
+	  var ws = new WebSocket("ws://localhost:9999/hello");
+
+	  ws.onopen = function() {
+	      $("#log").html("Connection open<br>");
+	  };
+
+	  ws.onmessage = function (message) {
+	      var data = message.data;
+	      $("#log").append("Message is received: " + data + "<br>");
+	  };
+
+	  ws.onclose = function () {
+	      $("#log").append("Connection closed<br>");
+	  };
+      });
     </script>
 
   </head>
   <body>
-    <input type="button" onClick="WebSocketTest()" value="Attach"/>
     <div id="log">
     </div>
   </body>
