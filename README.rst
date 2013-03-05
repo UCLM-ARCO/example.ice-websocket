@@ -5,8 +5,6 @@ This is a minimal working example to demostrate Ice-websocket integration:
     $ python ice-tornado-server.py
 
 - Open "client.html" in a websocket compliant web browser (ie. chrome)
-- Press "Attach" button
-
   - A new Ice object is created and its proxy is printed at terminal
 
 - Run 'python ./ice-client.py "<printed proxy>"' in other terminal
